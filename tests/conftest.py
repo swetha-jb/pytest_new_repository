@@ -20,12 +20,13 @@ def setup(request):
     chrome_options.add_argument("--headless")  # Optional: run without GUI
 
     driver = webdriver.Chrome(options=chrome_options)
-    driver.implicitly_wait(60)
+    #driver.implicitly_wait(60)
     driver.get("https://accounts2.netgear.com/login?redirectUrl=https:%2F%2Finsight.netgear.com%2F&clientId=6dlf5ppqm5oic7hhtk68qrlc9j")
     time.sleep(3)
     request.cls.driver = driver
     yield
     driver.quit()
+
 
 
 
