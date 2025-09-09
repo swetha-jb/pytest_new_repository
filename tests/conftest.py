@@ -8,6 +8,7 @@ from selenium import webdriver
 def setup(request):
     driver = webdriver.Chrome()
     driver.maximize_window()
+    driver.implicitly_wait(60)
     driver.get("https://accounts2.netgear.com/login?redirectUrl=https:%2F%2Finsight.netgear.com%2F&clientId=6dlf5ppqm5oic7hhtk68qrlc9j")
     time.sleep(3)
     request.cls.driver = driver
